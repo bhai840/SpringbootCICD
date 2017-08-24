@@ -12,7 +12,7 @@ ENV JAVA_VER=1.8.0
 
 RUN mkdir /projectname        
 
-# Add jar file from jenkins workspace or from S3/Artifactory
+# Add jar file from jenkins workspace or from S3/Artifactory or from local target workspace
 
 ADD target/spring-boot-web-0.0.1-SNAPSHOT.jar  /projectname
 
