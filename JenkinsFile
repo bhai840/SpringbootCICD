@@ -1,0 +1,37 @@
+
+
+pipeline {
+
+    agent any
+
+    stages{
+
+        stage('Build'){
+            steps {
+              sh 'mvn clean package'  
+                
+            }
+
+        }
+
+        post {
+            success {
+                echo 'Now Archiving...'
+                archieveArtifacts artifacts: '**/target/*.jar'
+            }
+        }
+
+                        
+        stage('Deploy'){
+            steps {
+                echo 'copying file to remote server'
+                scp $WORKSPACE/target/*.jar ec2-user@52.204.85.45:/home/ec2-user/
+                
+            }
+
+        }
+
+
+    }
+
+}
