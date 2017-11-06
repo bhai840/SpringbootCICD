@@ -8,7 +8,8 @@ pipeline {
 
         stage('Build'){
             steps {
-              sh 'mvn clean package'  
+              echo 'install clean maven package'  
+              sh 'mvn clean install'  
                 
             }
 
@@ -17,6 +18,7 @@ pipeline {
         post {
             success {
                 echo 'Now Archiving...'
+                sh 'make'
                 archiveArtifacts artifacts: '**/target/*.jar'
             }
         }
