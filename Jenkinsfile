@@ -7,7 +7,7 @@ pipeline {
         maven 'localmaven'
         jdk 'localjdk'
     }
-    stages{
+    stages {
         stage ('Initialize') {
             steps {
                 sh '''
