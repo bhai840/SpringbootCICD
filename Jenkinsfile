@@ -26,7 +26,6 @@ pipeline {
                 }
             }
              
-                 
         }
           stage ('deploy to server on amazon') {
               steps {
