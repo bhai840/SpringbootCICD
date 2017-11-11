@@ -26,8 +26,14 @@ pipeline {
                 }
             }
              
-                
+                 
         }
+          stage ('deploy to server on amazon') {
+              steps {
+                  build job: 'pipelineascode-rahul'
+              }
+              
+          }
 
      }
 
