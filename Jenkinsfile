@@ -31,7 +31,7 @@ pipeline {
           stage ('deploy to server on amazon') {
               steps {
                   build job: 'pipelineascode-rahul'
-                  scp $WORKSPACE/target/*.jar ec2-user@34.205.89.193:/home/ec2-user/
+                  
               }
               
           }
