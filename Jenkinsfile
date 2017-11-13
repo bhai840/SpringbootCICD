@@ -2,11 +2,7 @@
 
 pipeline {
 
-    agent {
-    node {
-        label 'slave'
-         }
-     }
+    agent any
     
      tools {
         maven 'localmaven'
