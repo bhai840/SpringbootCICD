@@ -25,7 +25,7 @@ pipeline {
           stage ('Build') {
             steps {
                 sh 'mvn -Dmaven.test.failure.ignore=true install'
-               
+                sh "docker build . -t spring-boot-web:${env.BUILD_ID}"
                 }
             post {
                 success {
