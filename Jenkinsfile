@@ -24,7 +24,7 @@ pipeline {
         }
           stage ('Build') {
             steps {
-                sh 'mvn clean install'added 
+                sh 'mvn clean install' 
                 //sh 'mvn -Dmaven.test.failure.ignore=true install'
                 sh "docker build . -t spring-boot-web:${env.BUILD_ID}"
                 }
