@@ -2,14 +2,16 @@
 
 pipeline {
 
-    agent { any
+    agent any// { any
    // node {
   //      label 'slave'
    //      }
-     }
+   //  }
      tools {
-        maven 'localmaven'
-        jdk 'localjdk'
+        //maven 'localmaven'
+         
+        //jdk 'localjdk'
+         Local_Java
     }
     stages {
         stage ('Initialize') {
