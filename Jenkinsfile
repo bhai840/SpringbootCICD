@@ -8,7 +8,7 @@ pipeline {
    //      }
    //  }
      tools {
-        //maven 'localmaven'
+        maven 'localmaven'
          
         //jdk 'localjdk'
          Local_Java
