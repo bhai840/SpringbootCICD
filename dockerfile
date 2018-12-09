@@ -13,9 +13,9 @@ ENV JAVA_VER=1.8.0
 RUN mkdir /projectname        
 
 # Add jar file from jenkins workspace or from S3/Artifactory or from local target workspace
-ADD https://s3.amazonaws.com/s3-gpfs/target/spring-boot-web-0.0.1-SNAPSHOT.jar 
+#ADD https://s3.amazonaws.com/s3-gpfs/target/spring-boot-web-0.0.1-SNAPSHOT.jar 
 
-#ADD target/spring-boot-web-0.0.1-SNAPSHOT.jar  /projectname
+ADD target/spring-boot-web-0.0.1-SNAPSHOT.jar  /projectname
 
 #add jar file from nexus artifactory
 
