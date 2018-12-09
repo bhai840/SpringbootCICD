@@ -11,7 +11,7 @@ pipeline {
         maven 'localmaven'
          
         //jdk 'localjdk'
-         Local_Java
+        jdk 'Local_Java'
     }
     stages {
         stage ('Initialize') {
