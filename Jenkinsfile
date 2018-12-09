@@ -1,7 +1,11 @@
 
 
 pipeline {
-
+    environment {
+    registry = "rahulnallari/microservice-springboot"
+    registryCredential = 'dockerhub'
+    dockerImage = ''    
+}
     agent any// { any
    // node {
   //      label 'slave'
@@ -22,11 +26,12 @@ pipeline {
                 '''
             }
         }
-          stage ('Build') {
+          stage ('Build_springboot') {
             steps {
                 sh 'mvn clean install' 
                 //sh 'mvn -Dmaven.test.failure.ignore=true install'
-                sh "docker build -t spring-boot-web:${env.BUILD_ID} ."
+                //sh "docker build -t spring-boot-web:${env.BUILD_ID} ."
+                
                 }
             post {
                 success {
@@ -34,8 +39,22 @@ pipeline {
                     
                    }
                 }
-             
+          }   
+            stage ('Building_docker_images') {
+                 steps{
+                    script {
+                        dockerImage = docker.build registry + ":$BUILD_NUMBER"
         }
+      }
+    } 
+        
+           stage('Deploy Image') {
+                 steps{
+                    script {
+                        docker.withRegistry( '', registryCredential ) {
+                             dockerImage.push()
+    
+    }
          
 
      }
