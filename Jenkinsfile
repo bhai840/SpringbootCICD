@@ -11,12 +11,12 @@ pipeline {
   //      label 'slave'
    //      }
    //  }
-   //  tools {
-   //     maven 'localmaven'
+     tools {
+        maven 'localmaven'
          
         //jdk 'localjdk'
-  //      jdk 'Local_Java'
-  //  }
+        jdk 'Local_Java'
+   }
     stages {
         stage ('Initialize') {
             steps {
