@@ -26,7 +26,7 @@ pipeline {
                 '''
             }
         }
-          stage ('Build_springboot') {
+          stage ('Build_springboot_JAR') {
             steps {
                 sh 'mvn clean install' 
                 //sh 'mvn -Dmaven.test.failure.ignore=true install'
@@ -48,18 +48,33 @@ pipeline {
       }
     } 
         
-           stage('Deploy Image') {
+           stage('Push_Image') {
                  steps{
                     script {
                         docker.withRegistry( '', registryCredential ) {
                              dockerImage.push()
     
-    }
-         
-
-     }
+                                  }
+                            }
+                      }
+     
                  }
-           }
+           
+           stage ("Kubernetes_deploy") {
+
+               container('default'){
+
+               sh "kubectl apply -f Kubernetes/deployment.yaml -n <Kubernetes-NameSpace>"
+
+               sh "kubectl apply -f Kubernetes/services.yaml -n <Kubernetes-NameSpace>"
+
+               sh "kubectl apply -f Kubernetes/ingress.yaml -n <Kubernetes-NameSpace>"
+
+            }
+
+        }
+        
+        
     }
 }
 
