@@ -54,9 +54,9 @@ pipeline {
                         docker.withRegistry( '', registryCredential ) {
                              dockerImage.push()
     
-                                  }
-                            }
-                      }
+                         }
+                       }
+                    }
      
                  }
            
@@ -74,7 +74,7 @@ pipeline {
 
         }
         
-        
+    } 
     }
 }
 
