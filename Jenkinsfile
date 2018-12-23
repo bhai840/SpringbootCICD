@@ -62,7 +62,7 @@ pipeline {
            
            stage ("Kubernetes_deploy") {
 
-               container('default'){
+               steps{
 
                sh "kubectl apply -f Kubernetes/deployment.yaml -n <Kubernetes-NameSpace>"
 
