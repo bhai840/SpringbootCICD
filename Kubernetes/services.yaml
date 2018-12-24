@@ -12,7 +12,7 @@ metadata:
 
     app: pipeline-springboot
 
-    service: <serviceName>
+    service: springboot
 
     env: nonprod
 
@@ -22,7 +22,7 @@ spec:
 
     app: pipeline-springboot
 
-    service: <serviceName>
+    service: springboot
 
     env: nonprod
 
