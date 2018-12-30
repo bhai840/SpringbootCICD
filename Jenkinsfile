@@ -64,11 +64,16 @@ pipeline {
 
                steps{
                 //     sh "kubectl get nodes"
-               sh "kubectl apply -f Kubernetes/deployment.yaml -n ${Kuberntes-NameSpace}"
+                       sh '''
 
-               sh "kubectl apply -f Kubernetes/services.yaml -n ${Kuberntes-NameSpace}"
+                            kubectl apply -f Kubernetes/deployment.yaml -n ${Kuberntes-NameSpace}
 
-               sh "kubectl apply -f Kubernetes/ingress.yaml -n ${Kuberntes-NameSpace}"
+                            kubectl apply -f Kubernetes/services.yaml -n ${Kuberntes-NameSpace}
+
+                            kubectl apply -f Kubernetes/ingress.yaml -n ${Kuberntes-NameSpace}
+
+                         '''
+               
 
             }
 
