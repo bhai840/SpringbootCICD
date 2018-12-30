@@ -66,11 +66,12 @@ pipeline {
                 //     sh "kubectl get nodes"
                        sh '''
 
-                            kubectl apply -f Kubernetes/deployment.yaml -n ${Kuberntes-NameSpace}
+                            kubectl apply -f https://github.com/bhai840/SpringbootCICD/blob/master/Kubernetes/Deployment.yaml -n ${Kuberntes-NameSpace}
 
-                            kubectl apply -f Kubernetes/services.yaml -n ${Kuberntes-NameSpace}
+                            kubectl apply -f https://github.com/cvemula1/java-SpringBootapp-k8s/blob/master/Kubernetes/services.yaml -n ${Kuberntes-NameSpace}
 
-                            kubectl apply -f Kubernetes/ingress.yaml -n ${Kuberntes-NameSpace}
+                            kubectl apply -f https://github.com/cvemula1/java-SpringBootapp-k8s/blob/master/Kubernetes/ingress.yaml
+ -n ${Kuberntes-NameSpace}
 
                          '''
                
