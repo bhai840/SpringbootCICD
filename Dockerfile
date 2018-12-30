@@ -34,5 +34,7 @@ USER 1001
 
 
 #CMD ["java","-jar","/spring-boot-web-0.0.1-SNAPSHOT.jar"]
-ENTRYPOINT ["java","-jar","/projectname/spring-boot-web-0.0.1-SNAPSHOT.jar"]
+#ENTRYPOINT ["java","-jar","/projectname/spring-boot-web-0.0.1-SNAPSHOT.jar"]
+CMD java - jar /projectname/spring-boot-web-0.0.1-SNAPSHOT.jar
+
 
