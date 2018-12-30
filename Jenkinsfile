@@ -1,5 +1,4 @@
 
-
 pipeline {
     environment {
     registry = "rahulnallari/microservice-springboot"
@@ -43,7 +42,7 @@ pipeline {
             stage ('Building_docker_images') {
                  steps{
                     script {
-                        dockerImage = docker.build registry + ":$BUILD_NUMBER"
+                        dockerImage = docker.build registry + ":latest"
         }
       }
     } 
