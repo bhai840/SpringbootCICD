@@ -5,7 +5,7 @@ metadata:
   namespace: payments-dev
   labels:
     app: pipeline-springboot
-    service: ${ServiceName}    ###ServiceName
+    service: springboot-service    ###ServiceName
     env: nonprod
 spec:
   replicas: 2
@@ -17,12 +17,12 @@ spec:
   template:
     metadata:
       name: pipeline-springboot
-      namespace: ${Kuberntes-NameSpace}     ## Kubernets namespace
+      namespace: payments-dev     ## Kubernets namespace
       annotations:
-        imagelabel: latest
+        imagelabel: $BUILD_NUMBER
       labels:
         app: pipeline-springboot
-        service: ${ServiceName}
+        service: springboot-service
         env: nonprod
     spec:
       affinity:
@@ -35,8 +35,8 @@ spec:
                 topologyKey: failure-domain.beta.kubernetes.io/zone
                 labelSelector:
                   matchLabels:
-                    app: pipeline-hello-world
-                    service: ${ServiceName}     # K8s ServiceName
+                    app: pipeline-springboot
+                    service: springboot-service     # K8s ServiceName
                     env: nonprod
       containers:
         - envFrom:
