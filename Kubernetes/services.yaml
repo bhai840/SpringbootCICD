@@ -6,13 +6,13 @@ metadata:
 
   name: pipeline-springboot
 
-  namespace: ${Kubernetes-NameSpace}    # Kubernets namespace
+  namespace: payments-dev    # Kubernets namespace
 
   labels:
 
     app: pipeline-springboot
 
-    service: springboot
+    service: springboot-service
 
     env: nonprod
 
