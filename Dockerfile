@@ -33,7 +33,7 @@ USER 1001
 #ENTRYPOINT exec java $JAVA_OPTS -jar /projectname//projectname-1.0.jar
 
 
-CMD ["java","-jar","/spring-boot-web-0.0.1-SNAPSHOT.jar"]
-#ENTRYPOINT ["java","-jar","/projectname/spring-boot-web-0.0.1-SNAPSHOT.jar"]
-
+#CMD ["java","-jar","/spring-boot-web-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java","-jar","/projectname/spring-boot-web-0.0.1-SNAPSHOT.jar"]
+CMD["-start"]
 
