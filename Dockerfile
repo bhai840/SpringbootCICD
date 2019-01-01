@@ -1,6 +1,6 @@
 FROM java:openjdk-8u111-jre
 
-MAINTAINER Chenna Vemula <chennarao.py@gmail.com>
+MAINTAINER Rahulnallari 
 
 EXPOSE 8080
 EXPOSE 8090
