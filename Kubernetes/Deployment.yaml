@@ -61,9 +61,9 @@ spec:
               containerPort: 8080
           volumeMounts:
             - name: servicetoken
-              mountPath: /pipeline-springboot/servicetoken
+              mountPath: /home/ubuntu/SpringbootCICD/Kubernetes/servicetoken
             - name: certificate
-              mountPath: /pipeline-springboot/certificate
+              mountPath: /home/ubuntu/SpringbootCICD/Kubernetes/certificate
           workingDir: /pipeline-springboot
       volumes:
         - name: servicetoken
