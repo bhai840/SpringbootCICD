@@ -2,7 +2,7 @@ FROM java:openjdk-8u111-jre
 
 MAINTAINER Rahulnallari 
 
-EXPOSE 8080
+#EXPOSE 8080
 EXPOSE 8090
 ENV JAVA_VER=1.8.0
 
