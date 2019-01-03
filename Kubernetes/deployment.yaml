@@ -1,0 +1,66 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: payments-dev
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: springboot-service
+  namespace: payments-dev    # Kubernets namespace
+  labels:
+    app: pipeline-springboot
+    #service: springboot-service  # because of this endpoint is not getting created
+spec:
+  selector:
+    app: pipeline-springboot
+    #service: springboot-service
+  type: NodePort
+  ports:
+   - port: 8090
+     targetPort: 8090
+     nodePort: 30800
+     protocol: TCP
+     name: http
+
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: my-ingress
+  namespace: payments-dev
+spec:
+  backend:
+    serviceName: springboot-service
+    servicePort: 8090
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pipeline-springboot
+  namespace: payments-dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pipeline-springboot
+  template:
+    metadata:
+      labels:
+        app: pipeline-springboot
+    spec:
+      containers:
+      - name: pipeline-springboot
+        image: rahulnallari/microservice-springboot:latest
+        ports:
+        - containerPort: 8090
+          protocol: TCP
+          #        env:
+          # - name: PORT
+ ---
+ 
+ 
+                                  
+                                  
