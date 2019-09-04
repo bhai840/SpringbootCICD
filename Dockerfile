@@ -15,7 +15,7 @@ RUN mkdir /projectname
 # Add jar file from jenkins workspace or from S3/Artifactory or from local target workspace
 #ADD https://s3.amazonaws.com/s3-gpfs/target/spring-boot-web-0.0.1-SNAPSHOT.jar 
 
-ADD /var/lib/jenkins/workspace/spring_freestyle/target/spring-boot-web-0.0.1-SNAPSHOT.jar  /projectname
+ADD https://jenkinss3test.s3-ap-southeast-2.amazonaws.com/jobs/spring_freestyle/8/target/spring-boot-web-0.0.1-SNAPSHOT.jar  /projectname
 
 #add jar file from nexus artifactory
 
