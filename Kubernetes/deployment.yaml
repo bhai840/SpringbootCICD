@@ -53,7 +53,7 @@ spec:
     spec:
       containers:
       - name: pipeline-springboot
-        image: rahulnallari/microservice-springboot:latest
+        image: rahulnallari/springboot:latest
         ports:
         - containerPort: 8090
           protocol: TCP
