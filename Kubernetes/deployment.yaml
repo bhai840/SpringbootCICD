@@ -11,13 +11,13 @@ metadata:
   name: springboot-service
   namespace: payments-dev    # Kubernets namespace
   labels:
-    app: pipeline-springboot
+    app: springboot-app
     #service: springboot-service  # because of this endpoint is not getting created
 spec:
   selector:
-    app: pipeline-springboot
+    app: springboot-app
     #service: springboot-service
-  type: NodePort
+  type: LoadBalancer
   ports:
    - port: 8090
      targetPort: 8090
@@ -40,20 +40,20 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: pipeline-springboot
+  name: springboot-app
   namespace: payments-dev
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: pipeline-springboot
+      app: springboot-app
   template:
     metadata:
       labels:
-        app: pipeline-springboot
+        app: springboot-app
     spec:
       containers:
-      - name: pipeline-springboot
+      - name: springboot-app
         image: rahulnallari/springboot:latest
         ports:
         - containerPort: 8090
