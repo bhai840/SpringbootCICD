@@ -17,7 +17,7 @@ spec:
   selector:
     app: springboot-app
     #service: springboot-service
-  type: LoadBalancer
+  type: NodePort
   ports:
    - port: 8090
      targetPort: 8090
