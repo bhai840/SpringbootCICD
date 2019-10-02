@@ -19,8 +19,8 @@ spec:
     #service: springboot-service
   type: NodePort
   ports:
-   - port: 8090
-     targetPort: 8090
+   - port: 8030
+     targetPort: 8030
      nodePort: 30800
      protocol: TCP
      name: http
@@ -34,7 +34,7 @@ metadata:
 spec:
   backend:
     serviceName: springboot-service
-    servicePort: 8090
+    servicePort: 8030
 
 ---
 apiVersion: apps/v1
@@ -56,7 +56,7 @@ spec:
       - name: springboot-app
         image: rahulnallari/springboot:latest
         ports:
-        - containerPort: 8090
+        - containerPort: 8030
           protocol: TCP
           #        env:
           # - name: PORT

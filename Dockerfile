@@ -3,7 +3,7 @@ FROM java:openjdk-8u111-jre
 MAINTAINER Rahulnallari 
 
 #EXPOSE 8080
-EXPOSE 8090
+EXPOSE 8030
 ENV JAVA_VER=1.8.0
 
 #RUN yum install -y wget \
