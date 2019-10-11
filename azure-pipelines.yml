@@ -28,7 +28,7 @@ steps:
 
     javaHomeOption: 'JDKVersion'
 
-    jdkVersionOption: '1.11'
+    jdkVersionOption: '1.8'
 
     jdkArchitectureOption: 'x64'
 
