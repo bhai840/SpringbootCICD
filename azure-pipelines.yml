@@ -27,7 +27,7 @@ steps:
 
     mavenOptions: '-Xmx3072m'
 
-    javaHomeOption: 'JDKVersion'
+    javaHomeOption: 'JAVA_HOME'
 
     jdkVersionOption: '1.8'
 
