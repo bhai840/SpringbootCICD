@@ -12,7 +12,7 @@ trigger:
 
 
 
-pool: aws
+pool: 'aws'
 
 
 
