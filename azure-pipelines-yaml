@@ -1,0 +1,66 @@
+# Starter pipeline
+
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+
+# Add steps that build, run tests, deploy, and more:
+
+
+
+trigger:
+
+- dev
+
+
+
+pool: aws
+
+
+
+steps:
+
+- task: Maven@3
+
+  inputs:
+
+    mavenPomFile: 'pom.xml'
+
+    mavenOptions: '-Xmx3072m'
+
+    javaHomeOption: 'JDKVersion'
+
+    jdkVersionOption: '1.11'
+
+    jdkArchitectureOption: 'x64'
+
+    publishJUnitResults: false
+
+    testResultsFiles: '**/TEST-*.xml'
+
+    goals: 'package'
+
+
+
+
+# below steps are for microsoft hosted agent
+
+#pool: 
+
+#  vmImage: 'ubuntu-latest'
+
+
+
+#steps:
+
+#- script: mvn clean install
+
+#  displayName: 'Run a one-line script'
+
+
+
+#- script: |
+
+#    echo Add other tasks to build, test, and deploy your project.
+
+#    echo successfully built
+
+#  displayName: 'Run a multi-line script'
