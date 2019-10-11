@@ -12,8 +12,8 @@ trigger:
 
 
 
-pool: 'aws'
-  name: 'aws_terra'
+pool: 
+  name: 'aws'
 
 
 
