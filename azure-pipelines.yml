@@ -5,14 +5,31 @@
 trigger:
 - master
 
-pool:
-  vmImage: 'ubuntu-latest'
+pool: aws
 
 steps:
-- script: mvn clean install
-  displayName: 'Run a one-line script'
+- task: Maven@3
+  inputs:
+    mavenPomFile: 'pom.xml'
+    mavenOptions: '-Xmx3072m'
+    javaHomeOption: 'JDKVersion'
+    jdkVersionOption: '1.11'
+    jdkArchitectureOption: 'x64'
+    publishJUnitResults: false
+    testResultsFiles: '**/TEST-*.xml'
+    goals: 'package'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo successfully built
-  displayName: 'Run a multi-line script'
+
+
+# below steps are for microsoft hosted agent
+#pool: 
+#  vmImage: 'ubuntu-latest'
+
+#steps:
+#- script: mvn clean install
+#  displayName: 'Run a one-line script'
+
+#- script: |
+#    echo Add other tasks to build, test, and deploy your project.
+#    echo successfully built
+#  displayName: 'Run a multi-line script'
