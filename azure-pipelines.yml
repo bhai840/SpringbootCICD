@@ -13,8 +13,11 @@ steps:
   inputs:
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
-    javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '11.0.4'
+    Set JAVA_HOME by: 'JDK Version'
+    JDK path: '/usr/lib/jvm/java-11-openjdk-11.0.4.11-0.el8_0.x86_64'
+    #javaHomeOption: 'JDKVersion'
+    JDK Version: 'JDK 11'
+    #jdkVersionOption: '11.0.4'
     jdkArchitectureOption: 'x64'
     publishJUnitResults: false
     testResultsFiles: '**/TEST-*.xml'
