@@ -36,13 +36,9 @@ stages:
         SourceFolder: '$(System.DefaultWorkingDirectory)'
         Contents: '**/target/*.?(war|jar)'
         TargetFolder: $(Build.ArtifactStagingDirectory)
-   # - upload: $(Build.ArtifactStagingDirectory)
-  #    artifact: drop
-    - task: PublishBuildArtifact@1
-      displayName: 'Publish Artifact: drop'
-      inputs:
-        PathtoPublish: '$(build.artifactstagingdirectory)'
-      condition: succeededOrFailed()
+    - upload: $(Build.ArtifactStagingDirectory)
+      artifact: drop
+   
 
 
 
