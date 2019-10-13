@@ -38,11 +38,11 @@ stages:
         TargetFolder: $(Build.ArtifactStagingDirectory)
     - upload: $(Build.ArtifactStagingDirectory)
       artifact: drop
-    - task: PublishBuildArtifacts@1
-      displayName: 'Publish Artifact'
-      inputs:
-        pathtoPublish: '$(Build.ArtifactStagingDirectory)' 
-        artifactName: 'drop' 
+  #  - task: PublishBuildArtifacts@1
+  #    displayName: 'Publish Artifact'
+  #    inputs:
+  #      pathtoPublish: '$(Build.ArtifactStagingDirectory)' 
+  #      artifactName: 'drop' 
    
 
 
