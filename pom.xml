@@ -18,6 +18,18 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	
 	</parent>
+	<distributionManagement>
+	      <repository>
+                  <id>dev-azure-com-snallari0675-artifacts</id>
+                  <url>https://pkgs.dev.azure.com/snallari0675/_packaging/artifacts/maven/v1</url>
+                  <releases>
+                    <enabled>true</enabled>
+                  </releases>
+                  <snapshots>
+                    <enabled>true</enabled>
+                  </snapshots>
+              </repository>
+       </distributionManagement>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
