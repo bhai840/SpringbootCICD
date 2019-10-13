@@ -8,13 +8,13 @@ trigger:
 pool: Default
 
 steps:
+
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
-    javaHomeOption: 'JDKVersion'
-    jdkUserInputPath: '/usr/lib/jvm/java-11-openjdk-11.0.4.11-0.el8_0.x86_64'
-    jdkVersionOption: '1.11'
+    javaHomeOption: 'JDKVersion, /usr/lib/jvm/java-11-openjdk-11.0.4.11-0.el8_0.x86_64 '
+    jdkVersionOption: '11.0.4'
     jdkArchitectureOption: 'x64'
     publishJUnitResults: false
     testResultsFiles: '**/TEST-*.xml'
