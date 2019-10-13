@@ -13,7 +13,7 @@ trigger:
 
 
 pool: 
-  name: 'aws'
+  name: 'Default'
 
 
 
