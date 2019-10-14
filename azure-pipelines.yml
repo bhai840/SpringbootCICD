@@ -24,8 +24,8 @@ stages:
     - script: mvn clean install
       displayName: 'Maven Package'
 	
-	  - task: PublishBuildArtifacts@1
-	    displayName: 'Publish Artifacts'
-	    inputs:
-	      pathtoPublish: '$(Build.ArtifactStagingDirectory)'
-		    artifactName: 'drop'
+    - task: PublishBuildArtifacts@1
+      displayName: 'Publish Artifacts'
+      inputs:
+        pathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        artifactName: 'drop'
