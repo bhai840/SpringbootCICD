@@ -1,5 +1,10 @@
 pool: Default
-
 steps:
-displayName: 'Buils Maven Package'
 - script: mvn clean install
+  displayName: 'Run a one-line script'
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo successfully built
+  displayName: 'Run a multi-line script'
+
