@@ -7,7 +7,7 @@ stages:
   - artifact
   - deploy
   
-  stage: build
-  displayName: "Maven Package"
-  script: 
-    mvn clean install
+  - stage: build
+    displayName: "Maven Package"
+    script: 
+      mvn clean install
