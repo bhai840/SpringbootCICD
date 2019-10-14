@@ -23,7 +23,6 @@ stages:
     steps:
     - script: mvn clean install
       displayName: 'Maven Package'
-	
     - task: PublishBuildArtifacts@1
       displayName: 'Publish Artifacts'
       inputs:
