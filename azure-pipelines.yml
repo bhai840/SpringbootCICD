@@ -1,0 +1,13 @@
+trigger:
+- dev
+
+pool: Default
+stages:
+  - build
+  - artifact
+  - deploy
+  
+  stage: build
+  displayName: "Maven Package"
+  script: 
+    mvn clean install
