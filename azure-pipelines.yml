@@ -27,4 +27,4 @@ stages:
       displayName: 'Publish Artifacts'
       inputs:
         pathtoPublish: '$(Build.ArtifactStagingDirectory)'
-        artifactName: 'drop'
+        artifactName: 'springboot_artifact'
