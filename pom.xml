@@ -20,8 +20,8 @@
 	</parent>
 	<distributionManagement>
 	      <repository>
-                  <id>dev-azure-com-snallari0675-artifacts</id>
-                  <url>https://pkgs.dev.azure.com/snallari0675/_packaging/artifacts/maven/v1</url>
+                  <id>dev-azure-com-snallari0675-springboot_artifact</id>
+                  <url>https://pkgs.dev.azure.com/snallari0675/_packaging/springboot_artifact/maven/v1</url>
                   <releases>
                     <enabled>true</enabled>
                   </releases>
