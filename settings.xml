@@ -1,0 +1,10 @@
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+                      https://maven.apache.org/xsd/settings-1.0.0.xsd">
+     <server>
+        <id>dev-azure-com-snallari0675-springboot_artifact</id>
+        <username>springboot_artifact</username>
+        <!-- Treat this auth token like a password. Do not share it with anyone, including Microsoft support. -->
+        <!-- The generated token expires on or before 1/13/2020 -->
+        <password>igpxqtunmiuar2evps2kxzfvbu2ai2cxovcnxxijcluo7fmclggq</password>
+     </server>
+</settings>
