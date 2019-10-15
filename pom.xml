@@ -30,6 +30,19 @@
                   </snapshots>
               </repository>
        </distributionManagement>
+       
+       <repositories>
+	        <repository>
+                  <id>dev-azure-com-snallari0675-springboot_artifact</id>
+                  <url>https://pkgs.dev.azure.com/snallari0675/_packaging/springboot_artifact/maven/v1</url>
+                  <releases>
+                    <enabled>true</enabled>
+                  </releases>
+                  <snapshots>
+                    <enabled>true</enabled>
+                  </snapshots>
+              </repository>
+       </repositories>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
