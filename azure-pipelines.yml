@@ -23,16 +23,18 @@ stages:
     steps:
     - script: mvn clean install
       displayName: 'Maven Package'
+    - script: mvn drop
+      displayName: 'Publish Artifact'
    # - task: PublishBuildArtifacts@1
   #    displayName: 'Publish Artifacts'
   #    inputs:
    #     pathtoPublish: '$(Build.ArtifactStagingDirectory)'
    #     artifactName: 'springboot_artifact'
-    - task: CopyFiles@2
-      displayName: 'Copy Files to artifact staging directory'
-      inputs:
-        SourceFolder: '$(System.DefaultWorkingDirectory)'
-        Contents: '**/target/*.?(war|jar)'
-        TargetFolder: $(Build.ArtifactStagingDirectory)
-    - upload: $(Build.ArtifactStagingDirectory)
-      artifact: 'springboot_artifact'
+  #  - task: CopyFiles@2
+   #   displayName: 'Copy Files to artifact staging directory'
+   #   inputs:
+   #     SourceFolder: '$(System.DefaultWorkingDirectory)'
+   #     Contents: '**/target/*.?(war|jar)'
+   #     TargetFolder: $(Build.ArtifactStagingDirectory)
+   # - upload: $(Build.ArtifactStagingDirectory)
+   #   artifact: 'springboot_artifact'
