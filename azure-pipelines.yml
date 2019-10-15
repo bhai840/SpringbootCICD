@@ -23,7 +23,7 @@ stages:
     steps:
     - script: mvn clean install
       displayName: 'Maven Package'
-    - script: mvn drop
+    - script: mvn deploy
       displayName: 'Publish Artifact'
    # - task: PublishBuildArtifacts@1
   #    displayName: 'Publish Artifacts'
