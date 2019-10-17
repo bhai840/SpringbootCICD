@@ -47,6 +47,11 @@ stages:
       inputs:
         path: '$(System.DefaultWorkingDirectory)' 
         artifactName: 'springboot_artifact' 
+    - task: DownloadPipelineArtifact@2
+      inputs:
+        artifact: springboot_artifact
+        patterns: '**/target/*.?(war|jar)'
+        path: $(Build.SourcesDirectory)
    
 
 
