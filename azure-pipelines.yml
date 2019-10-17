@@ -6,7 +6,7 @@ trigger:
 - dev
 
 #pool: Default
-pool: 
+pool: Azure Pipelines
   vmImage: 'ubuntu-latest'
 
 
