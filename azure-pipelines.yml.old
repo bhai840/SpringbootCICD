@@ -5,7 +5,10 @@
 trigger:
 - dev
 
-pool: Default
+#pool: Default
+pool: 
+  vmImage: 'ubuntu-latest'
+
 
 stages: 
 - stage: Build
@@ -22,10 +25,10 @@ stages:
         mavenPomFile: 'pom.xml'
         mavenOptions: '-Xmx3072m'
         Set JAVA_HOME by: 'JDK Version'
-        JDK path: '/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.el8_0.x86_64'
-        #javaHomeOption: 'JDKVersion'
-        JDK Version: 'JDK 8'
-        #jdkVersionOption: '11.0.4'
+        #JDK path: '/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.el8_0.x86_64'
+        javaHomeOption: 'JDKVersion'
+       # JDK Version: 'JDK 8'
+        jdkVersionOption: '1.8'
         jdkArchitectureOption: 'x64'
         publishJUnitResults: true
         testResultsFiles: '**/surefire-reports/TEST-*.xml'
@@ -38,11 +41,11 @@ stages:
         TargetFolder: $(Build.ArtifactStagingDirectory)
     - upload: $(Build.ArtifactStagingDirectory)
       artifact: drop
-  #  - task: PublishBuildArtifacts@1
-  #    displayName: 'Publish Artifact'
-  #    inputs:
-  #      pathtoPublish: '$(Build.ArtifactStagingDirectory)' 
-  #      artifactName: 'drop' 
+    - task: PublishBuildArtifacts@1
+      displayName: 'Publish Artifact'
+      inputs:
+        pathtoPublish: '$(Build.ArtifactStagingDirectory)' 
+        artifactName: 'springboot_artifact' 
    
 
 
