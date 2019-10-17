@@ -5,9 +5,10 @@
 trigger:
 - dev
 
-pool: Default
-#pool: Azure Pipelines
-#  vmImage: 'ubuntu-latest'
+#pool: Default
+
+pool: Azure Pipelines
+  vmImage: 'ubuntu-latest'
 
 
 stages: 
@@ -16,7 +17,7 @@ stages:
   jobs:
   - job: MavenPackageAndPublishArtifacts
     displayName: Maven Package and Publish Artifacts
-    pool: Default
+  #  pool: Default
       
     steps:
     - task: Maven@3
