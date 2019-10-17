@@ -5,8 +5,8 @@
 trigger:
 - dev
 
-#pool: Default
-pool: Azure Pipelines
+pool: Default
+#pool: Azure Pipelines
 #  vmImage: 'ubuntu-latest'
 
 
@@ -39,8 +39,8 @@ stages:
         SourceFolder: '$(System.DefaultWorkingDirectory)'
         Contents: '**/target/*.?(war|jar)'
         TargetFolder: $(Build.ArtifactStagingDirectory)
-    - upload: $(Build.ArtifactStagingDirectory)
-      artifact: drop
+    #- upload: $(Build.ArtifactStagingDirectory)
+   #   artifact: drop
     - task: PublishBuildArtifacts@1
       displayName: 'Publish Artifact'
       inputs:
