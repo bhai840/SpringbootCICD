@@ -26,7 +26,7 @@ stages:
         mavenPomFile: 'pom.xml'
         mavenOptions: '-Xmx3072m'
         Set JAVA_HOME by: 'JDK Version'
-        #JDK path: '/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.el8_0.x86_64'
+        JDK path: '/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.el8_0.x86_64'
         javaHomeOption: 'JDKVersion'
        # JDK Version: 'JDK 8'
         jdkVersionOption: '1.8'
