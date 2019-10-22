@@ -45,14 +45,14 @@ stages:
     - task: PublishPipelineArtifact@0
       displayName: 'Publish Artifact'
       inputs:
-        artifactName: 'snallari0675' 
+        artifactName: 'springboot_artifact' 
         targetPath: '$(System.DefaultWorkingDirectory)'
-    - task: DownloadPipelineArtifact@0
-      inputs:
-        artifactName: snallari0675
+  #  - task: DownloadPipelineArtifact@0
+  #    inputs:
+  #      artifactName: snallari0675
        # patterns: '**/target/*.?(war|jar)'
-        targetPath: $(Build.SourcesDirectory)
-      continueOnError: true
+ #       targetPath: $(Build.SourcesDirectory)
+ #     continueOnError: true
    
 
 
