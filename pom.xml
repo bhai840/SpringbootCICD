@@ -18,6 +18,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	
 	</parent>
+	<!--- below is to download dependencies from custom artifactory, which in this case is azure artifact
 	<distributionManagement>
 	      <repository>
                   <id>dev-azure-com-snallari0675-springboot_artifact</id>
@@ -43,6 +44,7 @@
                   </snapshots>
               </repository>
        </repositories>
+            -->
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
