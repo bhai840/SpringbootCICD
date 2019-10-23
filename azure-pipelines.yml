@@ -63,10 +63,9 @@ stages:
       displayName: 'Deployment'
       inputs:
         sshEndpoint: rahulssh
-        commands: |
-          echo $JAVA_HOME
-          ls -lrt
-          echo $?
+        script: azure_shell/dep.sh
+        scriptPath: /home/ubuntu
+          
         
           
 
