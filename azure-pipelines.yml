@@ -65,7 +65,7 @@ stages:
         sshEndpoint: rahulssh
         commands: |
           echo $JAVA_HOME
-          which java > /dev/null
+          ls -lrt
           echo $?
         
           
