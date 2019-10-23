@@ -64,8 +64,8 @@ stages:
       inputs:
         sshEndpoint: rahulssh
         script: azure_shell/dep.sh
-        scriptPath: /home/ubuntu
-        commands: /home/ubuntu/dep.sh
+        scriptPath: /home/ubuntu/
+        commands: pwd
           
         
           
