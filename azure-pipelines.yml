@@ -53,11 +53,15 @@ stages:
        # patterns: '**/target/*.?(war|jar)'
  #       targetPath: $(Build.SourcesDirectory)
  #     continueOnError: true
+ #   - script: |
+ #       echo $JAVA_HOME
+      
     - task: SSH@0
       displayName: 'Deployment'
       inputs:
         sshEndpoint: rahulssh
-        script: echo $JAVA_HOME
+        commands: echo $JAVA_HOME
+        
           
 
 
