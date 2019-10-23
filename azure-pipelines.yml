@@ -53,12 +53,12 @@ stages:
        # patterns: '**/target/*.?(war|jar)'
  #       targetPath: $(Build.SourcesDirectory)
  #     continueOnError: true
-     - task: SSH@0
-       displayName: 'Deployment'
-       inputs:
-         sshEndpoint: rahulssh
-         script: |
-           which java
+    - task: SSH@0
+      displayName: 'Deployment'
+      inputs:
+        sshEndpoint: rahulssh
+        script: |
+          which java
    
 
 
