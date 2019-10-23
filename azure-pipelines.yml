@@ -53,7 +53,7 @@ stages:
        # patterns: '**/target/*.?(war|jar)'
  #       targetPath: $(Build.SourcesDirectory)
  #     continueOnError: true
-     - script:
+     - script: |
          which java > /dev/null
          echo $?
        displayName: 'which java'
