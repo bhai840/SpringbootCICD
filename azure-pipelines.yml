@@ -58,6 +58,12 @@ stages:
  #     continueOnError: true
  #   - script: |
  #       echo $JAVA_HOME
+    - task: CopyFilesOverSSH@0
+      displayName: 'Securely copy files to the remote machine'
+      inputs:
+        sshEndpoint: rahulssh
+        sourceFolder: '$(System.DefaultWorkingDirectory)/_bhai840.SpringbootCICD/springboot_artifact/target/spring-boot-web-0.0.1-SNAPSHOT.jar'
+        targetFolder: /home/ubuntu 
       
     - task: SSH@0
       displayName: 'Deployment'
