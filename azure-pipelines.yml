@@ -60,7 +60,10 @@ stages:
       displayName: 'Deployment'
       inputs:
         sshEndpoint: rahulssh
-        commands: echo $JAVA_HOME
+        commands: |
+          echo $JAVA_HOME
+          which java > /dev/null
+          echo $?
         
           
 
