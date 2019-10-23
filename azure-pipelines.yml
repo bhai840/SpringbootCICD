@@ -17,6 +17,9 @@ stages:
   jobs:
   - job: MavenPackageAndPublishArtifacts
     displayName: Maven Package and Publish Artifacts
+    continueOnError: true
+    workspace:
+      clean: outputs
   #  pool: Default
       
     steps:
