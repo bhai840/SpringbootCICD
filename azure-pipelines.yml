@@ -53,6 +53,14 @@ stages:
        # patterns: '**/target/*.?(war|jar)'
  #       targetPath: $(Build.SourcesDirectory)
  #     continueOnError: true
+     - script:
+         which java > /dev/null
+         echo $?
+       displayName: 'which java'
+       task: SSH@0
+       inputs:
+         sshEndpoint: rahulssh
+         
    
 
 
