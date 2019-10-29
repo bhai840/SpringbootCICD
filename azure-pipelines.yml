@@ -5,7 +5,7 @@
 trigger:
 - dev
 
-pool: Default
+pool: new_redhat
 
 #pool: 
 #  vmImage: 'ubuntu-latest'
@@ -48,7 +48,7 @@ stages:
     - task: PublishPipelineArtifact@0
       displayName: 'Publish Artifact'
       inputs:
-        artifactName: 'springboot_artifact' 
+        artifactName: 'sb_artifact' 
         targetPath: '$(System.DefaultWorkingDirectory)'
   #  - task: DownloadPipelineArtifact@0
   #    inputs:
