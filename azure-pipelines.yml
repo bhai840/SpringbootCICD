@@ -1,14 +1,26 @@
 # Starter pipeline
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
-
+#schedules:
+#- cron: "0 0 * * *"
+#  displayName: Daily midnight build
+#  branches:
+#    include:
+#    - master
+#    - releases/*
+#    exclude:
+#    - releases/ancient/*
 trigger:
-- dev
+  batch: true
+  branches:
+    include:
+    - dev
+    - releases/*
 
-pool: new_redhat
+#pool: new_redhat
 
-#pool: 
-#  vmImage: 'ubuntu-latest'
+pool: 
+  vmImage: 'ubuntu-latest'
 
 
 stages: 
@@ -29,8 +41,8 @@ stages:
         mavenPomFile: 'pom.xml'
         mavenOptions: '-Xmx3072m'
         Set JAVA_HOME by: 'JDK Version'
-        JDK path: '/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.el8_0.x86_64'
-       # javaHomeOption: 'JDKVersion'
+       # JDK path: '/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.el8_0.x86_64'
+        javaHomeOption: 'JDKVersion'
         JDK Version: 'JDK 1.8'
       #  jdkVersionOption: '1.8'
        # jdkArchitectureOption: 'x64'
