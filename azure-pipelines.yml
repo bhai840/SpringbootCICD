@@ -10,6 +10,13 @@
 #    - releases/*
 #    exclude:
 #    - releases/ancient/*
+
+
+#pool: #MaximoAgentPool
+  #name: 'MaximoAgentPool'
+  #demands:
+    #- Agent.Name -equals maximo_enterprise
+
 trigger:
   batch: true
   branches:
