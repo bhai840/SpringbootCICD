@@ -7,14 +7,11 @@
 
 
 trigger:
-
-- dev
-
-
+- master
+- Release*
 
 pool: 
-  name: 'Default'
-
+  name: 'infra'
 
 
 steps:
