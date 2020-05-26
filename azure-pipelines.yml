@@ -30,7 +30,8 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  tag: '$(Build.BuildId)'
+  #tag: '$(Build.BuildId)'
+
 
 
 stages: 
@@ -74,12 +75,13 @@ stages:
         targetPath: '$(System.DefaultWorkingDirectory)'
 
     - task: Docker@2
-      displayName: Build an image
       inputs:
-        command: build
-        dockerfile: '$(System.DefaultWorkingDirectory)/Dockerfile'
-        tags: |
-          $(tag)
+        containerRegistry: 'DockerHub'
+        repository: 'rahulnallari/springboot'
+        command: 'buildAndPush'
+        Dockerfile: '**/Dockerfile'
+        tags: 'latest'
+          
   #  - task: DownloadPipelineArtifact@0
   #    inputs:
   #      artifactName: snallari0675
@@ -103,6 +105,7 @@ stages:
   #      script: azure_shell/dep.sh
   #      scriptPath: /home/ubuntu/
   #      commands: ls -lrt /home/ubuntu
+
           
         
           
