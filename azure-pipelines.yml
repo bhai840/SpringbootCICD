@@ -29,6 +29,9 @@ trigger:
 pool: 
   vmImage: 'ubuntu-latest'
 
+variables:
+  tag: '$(Build.BuildId)'
+
 
 stages: 
 - stage: Build
@@ -69,6 +72,14 @@ stages:
       inputs:
         artifactName: 'sb_artifact' 
         targetPath: '$(System.DefaultWorkingDirectory)'
+
+    - task: Docker@2
+      displayName: Build an image
+      inputs:
+        command: build
+        dockerfile: '$(System.DefaultWorkingDirectory)/Dockerfile'
+        tags: |
+          $(tag)
   #  - task: DownloadPipelineArtifact@0
   #    inputs:
   #      artifactName: snallari0675
