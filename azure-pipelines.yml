@@ -29,7 +29,7 @@ trigger:
 pool: 
   vmImage: 'ubuntu-latest'
 
-variables:
+#variables:
   #tag: '$(Build.BuildId)'
 
 
