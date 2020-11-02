@@ -74,13 +74,12 @@ stages:
         artifactName: 'sb_artifact' 
         targetPath: '$(System.DefaultWorkingDirectory)'
 
-    - task: Docker@2
-      inputs:
-        containerRegistry: 'DockerHub'
-        repository: 'rahulnallari/springboot'
-        command: 'buildAndPush'
-        Dockerfile: '**/Dockerfile'
-        tags: 'latest'
+  #  - task: Docker@2
+  #      containerRegistry: 'DockerHub'
+  #      repository: 'rahulnallari/springboot'
+  #      command: 'buildAndPush'
+  #      Dockerfile: '**/Dockerfile'
+  #      tags: 'latest'
           
   #  - task: DownloadPipelineArtifact@0
   #    inputs:
